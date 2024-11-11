@@ -86,6 +86,7 @@ export default function App() {
         "datum":datum,
         "kesz":0
       })
+      uj.sort((a, b) => new Date(a.datum) - new Date(b.datum));
       setAdatTomb(uj)
       storeData(uj)
       alert("Sikeres felvitel!")
@@ -99,12 +100,12 @@ export default function App() {
   }
 
   const valtozikDatum=(event,datum)=>{
-    alert(datum)
+    //alert(datum)
     setShow(false)
-    setDatum(datum.getFullYear()+"."+(datum.getMonth()+1)+"."+datum.getDate())
+    setDatum(datum.getFullYear()+"-"+(datum.getMonth()+1)+"-"+datum.getDate())
   }
   const befejezVagyVissza=(id)=>{
-    alert(id)
+    //alert(id)
     let uj=[...adatTomb]
     for (elem of uj){
       if(elem.id==id){
